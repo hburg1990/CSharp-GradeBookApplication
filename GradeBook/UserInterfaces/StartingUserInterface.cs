@@ -41,9 +41,9 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[1];
+            BaseGradeBook gradeBook;
             var type = parts[2];
-            var gradeBook = new BaseGradeBook(name);
-            
+
             if (type.ToLower() == GradeBookType.Standard.ToString().ToLower())
             {
                 gradeBook = new StandardGradeBook(name);
@@ -54,7 +54,7 @@ namespace GradeBook.UserInterfaces
             }
             else
             {
-                Console.WriteLine($"{name} is not a supported type of gradebook, please try again");
+                Console.WriteLine($"{type} is not a supported type of gradebook, please try again");
                 return;
             }
 
